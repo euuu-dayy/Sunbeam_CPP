@@ -364,8 +364,114 @@ Tape *tape
 .
 .
 
-If there are 1000 products we need to create 1000 pointers //NOT OK ()
+If there are 1000 products we need to create 1000 pointers //NOT OK        (Day6_5.cpp)
 
-We can use UPCASTING and create only one pointer of Product class
+We can use UPCASTING and create only one pointer of Product class          (Day6_6.cpp)
 and copy the address of Derived class object into Base Class Pointer //OK
+
+int main()
+{
+    int choice; 
+    while((choice = ::menulist())!=0)
+    {
+        Product *ptr = NULL;  //USED ONLY ONE POINTER 
+        switch (choice)
+        {
+        case 1: 
+            ptr = new Book( ); // upcasting 
+            ptr->acceptRecord( ); 
+            ptr->printRecord( ); 
+            break;
+        case 2: 
+            ptr = new Tape( );  //upcasting 
+            ptr->acceptRecord( ); 
+            ptr->printRecord( ); 
+        }
+        delete ptr; 
+        ptr = NULL; 
+    }
+    return 0;
+}
+
+(Day6_7.cpp) ---> we made code compact , BUT 
+
+There is problem , it is calling Products class accept and print 
+pagecount , playtime is getting ignored from book and tape class
+
+Product * ptr ------------> this is where problem is occurring , COMPILER IS SEEING THE TYPE OF POINTER which is Product , so it will call Products class accept and print 
+
+//Rather than looking at the type of object compiler checks the type of pointer  . THIS IS CALLED "EARLY BINDING"
+
+
+So, we use "virtual" keyword in accept and print member functions of Products class ("VIRTUAL KEYWORD")
+It will now behave according to object and will take accept , print of object
+
+now pagecount and playtime will be considered;
+
+---------------------------------------------------------------------
+
+# FUNCTION OVERRIDING -
+
+- Process of redefining "virtual" function of the base class inside derived class with the same signature is called "FUNCTION OVERRIDING"
+
+# RUN TIME POLYMORPHISM / DYNAMIC METHOD DISPATCH
+
+- By using base class pointer we call derived class member functions . This process is called Run Time Polymorphism.
+
+# FOR FUNCTION OVERRIDING - (ONLY VIRTUAL FUNCTIONS ARE OVERRIDDEN)***
+
+1. Function must be inside base and derived class too
+2. Signature of base class function and derived class function must be same
+3. Atlest function in Base class must be "virtual" 
+-------------------
+
+# VIRTUAL FUNCTION -
+- function with virtual keyword 
+- In case of upcasting, a function, which gets called depending on type of object rather than type of pointer is called virtual function.
+- If we are performing Overriding means same signature function in both base and derived class and if we declare member function of base class as virtual then derived class member function 	is taken into consideration
+# POLYMORPHIC CLASS -
+	class with atleast one virtual function is Polymorphic class
+
+*** Constructor cannot be virtual
+*** Static Member function cannot be virtual 
+Hence cannot be Overridden
+-----------------------------------------
+# ABSTRACT METHOD -
+
+virtual void acceptRecord(void) = 0;
+
+Function with "virtual" keyword and no body initialized with 0 (PURE VIRTUAL FUNCTION)
+
+Que. If we dont use virtual like [ void acceptRecord(void) =0; ] and initialized with 0,  Is it correct ?
+=> If we declare like [ void acceptRecord(void) = 0 ] it cannot be overridden until its declared virtual 
+   and function like [ void acceptRecord(void) = 0 ] is of no use
+
+# ABSTRACT CLASS -
+
+- If our class contain atleast one Abstract method/ Pure Virtual function then it is Abstract class
+- Overriding virtual function is not mandatory , but overriding pure virtual function is mandatory
+- If not then Derived class also be Abstract
+
+# Interface -
+
+- If class has all pure virtual functions then it is call pure abstract class / Interface .
+
+# Interface Inheritance 
+
+- Inheritance between Interfaces is called as Interface Inheritance
+
+# Design Pattern - 
+
+1. Factory Method
+2. Singelton Method
+
+# Typeid
+#RTTI(RunTime Type Information)
+
+
+
+
+
+
+
 
