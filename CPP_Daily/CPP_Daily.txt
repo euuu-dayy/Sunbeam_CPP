@@ -29,6 +29,9 @@ example -#include <iostream> // Reusable code for input/output
 
 ---------------------------------------------
 
+***Member function do not get space inside object.  But variables do
+
+
 Que. Why pointers are used in C but not in C++ struct with member functions
 First code (C) uses pointers because functions are separate from the struct; passing pointers is needed to modify the original struct data.
 
@@ -469,7 +472,27 @@ Que. If we dont use virtual like [ void acceptRecord(void) =0; ] and initialized
 #RTTI(RunTime Type Information)
 
 
+------------------------------------------------------------------------------------------------------------------------------
+> Day 2 Revision
 
+1.Scope Resolution Operator
+2.Need of Namespace
+3.Nested Namespace
+4."using" directive
+5.Points to remember about namespace
+6.Standard Streams of c++
+7.Manipulator
+8.Charecteristics of object
+9.Empty Class (size of empty class is 1 byte)
+10.Class (dont get space in memory),(Logical entity)
+11.Object (gets space in memory),(Physical entity)
+12.Function Overloading
+13.this pointer =>
+If we call member function on object compiler implicitly pass , address of current object as a argument to function
+To store that address of argument compiler implicitly generates one pointer as a function parameter inside member function. This is called this pointer
+- Present in only nonstatic member function
+- G,F,S dont get this pointer (Global,Friend,Static) functions
+14.Inline Function
 
 
 
