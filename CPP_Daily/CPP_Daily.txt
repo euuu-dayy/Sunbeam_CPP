@@ -494,6 +494,77 @@ To store that address of argument compiler implicitly generates one pointer as a
 - G,F,S dont get this pointer (Global,Friend,Static) functions
 14.Inline Function
 
+-------------
+------------Day 7----------
+
+# During upcasting, if we want to access:
+
+1.Data members of derived class
+2.Non overridden function of derived class 
+
+=> then we should use down casting.
+
+
+# typeid -
+typeid is a function defined in typeinfo header file 
+It returns the reference object of typeinfo class  
+
+eg - typeid(baseptr)
+
+//cout<<typeid(shape).name()<<endl;    P5Shape (Pointer -> P , character_count -> 5 , actual_character(typename) -> shape )
+//cout<<typeid(*shape).name()<<endl;   9Rectangle ( character_count -> 5 , actual_character(typename) -> shape )
+
+
+
+--------------------------------------------------------
+-----------Day 8--------------
+
+# C++ Vectors
+- A vector in C++ is like a resizable array.
+- Both vectors and arrays are data structures used to store multiple elements of the same data type.
+- The difference between an array and a vector, is that the size of an array cannot be modified (you cannot add or remove elements from an array). A vector however, can grow or shrink in size as needed.
+
+- Create a vector called cars that will store strings: 
+eg - vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Print vector elements
+for (string car : cars) {
+  cout << car << "\n";
+}
+
+
+-->> Operation on vector
+1. push_back
+2. pop_back
+3. push_front
+4. pop_front
+5. begin
+6. end
+7. erase
+
+# Iterator for traversing Vector ->
+
+ for(vector<int> :: iterator itr = v1.begin() ; itr!=v1.end() ; itr++)
+        cout<<*itr<<endl; 
+
+--------------------------------------------------------------------------	
+
+Day 5
+
+# Association
+1.Composition
+2.Aggregation
+
+
+
+Day 6
+
+#Object Slicing
+#Upcasting
+#Downcasting
+#Virtual Function
+#Function overriding
+#Polymorphism - Process of calling member function of derived class using pointer of base class is called runtime Polymorphism.
 
 
 
