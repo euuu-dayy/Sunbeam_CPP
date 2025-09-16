@@ -633,7 +633,7 @@ Day 6
 13.Message Passing -
 	- Process of calling member function on object is called message passing.
 
-
+------------------------------------------------------------------------------------------------------
 > Day 2 Revision
 
 1.Scope Resolution Operator
@@ -654,3 +654,83 @@ To store that address of argument compiler implicitly generates one pointer as a
 - Present in only nonstatic member function
 - G,F,S dont get this pointer (Global,Friend,Static) functions
 14.Inline Function
+------------------------------------------------------------------------------------------------------
+
+> Day 3 Revision
+
+1. this pointer
+
+- If we call member function on object then compiler implicitly pass, address of current object as a argument to the function.
+- To store address of argument(current object), compiler implicitly declare one pointer as function parameter inside member function. It is called this pointer.
+- General type of this pointer is : ClassName *const this;
+- this is a keyword in C++.
+- Using this pointer, non static data member and non static member function can communicate with each other hence, it is considered as a link/connection between them
+- If name of the data member and name of local variable is same then preference is always given to the local variable. In this case to refer data member, we must use this keyword. Otherwise use of this keyword is optional.
+
+- Following member function do not get this pointer:
+	1.Global function
+	2.Static member function
+	3.Friend function
+- We can not declare this pointer explicitly. But compiler consider this pointer as a first parameter inside member function
+
+2. Function Overloading (Compile Time Polymorphism)
+
+	1.If we want to give same name to the function and if type of all the parameters are same then number of parameters passed to the function must be different 
+	2.If number of parameters are same then type of atleast one parameter should be different
+	3.if number of parameters are same and then order of type of parameters must be different
+	
+	Defination => Using above rules, Process of defining multiple functions with name is called function overloading. In other words, process of defining function with same name and 	different signature is called function overloading
+
+	-In function overloading return type is not considered. **** IMP
+	  Returning value from function and catching value which returned by function is optional hence we can not overload function.
+
+
+	- Except 2 functions, we can overload any global function as well as member function:
+		1.main function
+		2.destructor
+
+3. Default Arguments - 
+	- Default arguments are always assigned from right to left direction.
+
+4. Initialization - We can initialize any variable only once.
+
+5. Assignment - We can assign value to the variable multiple times.
+
+6. Constructors -
+	- We can not call/invoke constructor on object/pointer/reference explicitly. It is designed to call implicitly
+
+
+	Complex c1;  //	c1 => object
+	c1.Complex();  // NOT OK
+
+	Complex *ptr= &c1 ;  //ptr => pointer
+	ptr -> Complex() ;  //NOT OK
+
+	Complex &c2 = c1 ; //c2 = reference
+	c2.complex;  //NOT OK
+	
+	- We can not declare constructor static, constant, volatile or virtual. We can declare constructor inline only. (CSV2)
+
+	- We can use any access specifier on constructor.
+		1.If constructor is public then we can create object of the class inside member function as well as non member function.
+		2.If constructor is private then we can create object of the class inside member function only.
+
+7. Constructor member Initializer List -
+	- If we want to initialize data members, according to order of data member declaration then we should use Constructor's member initializer list.
+	- Except array and string we can initialize any data member in Constructor member initializer list.
+
+-------------------------------------------------------------------------------------------------------------
+
+> Day 4 Revision
+
+	
+
+
+
+
+
+
+
+
+
+
