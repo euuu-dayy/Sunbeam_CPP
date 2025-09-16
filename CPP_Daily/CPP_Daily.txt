@@ -566,6 +566,91 @@ Day 6
 #Function overriding
 #Polymorphism - Process of calling member function of derived class using pointer of base class is called runtime Polymorphism.
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+> Day 1 Revision
+
+1.Token
+2.Types of Programming Languages
+3.Procedural Language Paradigms
+	1.Procedure Oriented Programming Language
+	2.Object Oriented Programming Language
+	3.Object Based Programming Language
+	4.Functional Oriented Programming Language
+4.Object Oriented Programming Structure
+	- coined by Alan Kay
+	- MED (Message Passing , Encapsulation , Dynamic Binding)
+	- Grady Booch
+	- 4 Major and 3 Minor Pillars
+	- 4 (Abstraction, Encapsulation , Modularity , Hierarchy)
+	- 3 (Typing , Concurrency , Persistence) [TCP]
+	- Typing – To reduce maintenance of the system (Polymorphism)
+	- Concurrency - To utilize Hardware resources efficiently
+	- Persistence - To maintain state of object on secondary storage
+5.C++ Introduction
+	- created by Bjarne Stroustrup
+	- C with classes
+	- C++ 98 => 74 keywords
+	- C++ 11 => 10 keywords
+6.Datatypes
+	1.Fundamanetal Datatypes
+	2.Derived Datatypes (Array , Function , Pointer , reference)
+	3.Userdefined Datatypes(Enum , union, structure , class)
+7.Flow of Execution 
+	- PCALL - Preprocessor , Compiler , Assembler , Linker , Loader
+	- isoeR
+
+	• .text section : It contains the executable instruction codes and is shared among every process running the same binary.
+	• .bss section : BSS stands for ‘Block Started by Symbol’. It holds un-initialized global and static variables.
+	• .data section : Contains the initialized global and static variables and their values. It is usually the largest part of the executable. It usually has READ/WRITE permissions.
+	• .rdata section : Also known as .rodata (read-only data) section. This contains constants and string literals.
+	• Heap section : It is used to allocate memory for variables dynamically.
+	• Empty space : Since size of stack and heap is not fixed, it may grow/shrink at runtime.
+
+8.Access Specifiers => In C++ structure members are by default public and class members are by default private
+9.Data Member
+10.Member Function
+11.Class => 
+	- Class is the collection of data member and member functions
+	- Its a basic unit of encapsulation
+	- It contain
+		1. Data Members (Static and Non static)
+		2. Member Function (Static and Non Static)
+		3. Nested Types
+	- Some member are special : under circumstances they are defined by the compiler
+		1. Constructor
+		2. Destructor
+		3. Copy Constructor
+		4. Assignment Operator Function 
+	- Concrete Class
+	- Abstract Class
+	- Concrete Method
+	- Abstract Method
+12.Object -
+- Object is a physical quantity
+- Global variable/Local Variable/Function Parameter / Member function do not get space inside object.
+- Only non static data members gets space inside object
+
+13.Message Passing -
+	- Process of calling member function on object is called message passing.
 
 
+> Day 2 Revision
 
+1.Scope Resolution Operator
+2.Need of Namespace
+3.Nested Namespace
+4."using" directive
+5.Points to remember about namespace
+6.Standard Streams of c++
+7.Manipulator
+8.Charecteristics of object
+9.Empty Class (size of empty class is 1 byte)
+10.Class (dont get space in memory),(Logical entity)
+11.Object (gets space in memory),(Physical entity)
+12.Function Overloading
+13.this pointer =>
+If we call member function on object compiler implicitly pass , address of current object as a argument to function
+To store that address of argument compiler implicitly generates one pointer as a function parameter inside member function. This is called this pointer
+- Present in only nonstatic member function
+- G,F,S dont get this pointer (Global,Friend,Static) functions
+14.Inline Function
